@@ -27,8 +27,8 @@ class TrackModels {
 
     async addTrack(newTrack) {
         try {
-            const mySql = 'INSERT INTO track (title, youtube_url) VALUES (?,?)'
-            const result = await db.promise().query(mySql, [newTrack.title, newTrack.youtube_url])
+            const mySql = 'INSERT INTO track (title, youtube_url, album_id) VALUES (?,?,?)'
+            const result = await db.promise().query(mySql, [newTrack.title, newTrack.youtube_url, newTrack.album_id])
             return result[0]
         }
         catch(error) {

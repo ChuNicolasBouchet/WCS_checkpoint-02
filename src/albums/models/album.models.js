@@ -26,7 +26,7 @@ class AlbumModels {
     }
     async getTracksAlbum(albumId) {
         try {
-            const mySql = 'SELECT * FROM track LEFT JOIN album ON album_id = ?'
+            const mySql = 'SELECT * FROM track WHERE album_id = ?'
             const result = await db.promise().query(mySql, [albumId])
             return result[0]
         }

@@ -26,7 +26,8 @@ class TrackControllers {
         try {
             const newTrack = {
                 title: req.body.title,
-                youtube_url: req.body.youtube_url
+                youtube_url: req.body.youtube_url,
+                album_id: req.body.album_id
             }
             const trackId = await TrackModels.addTrack(newTrack)
             newTrack.id = trackId
